@@ -7,14 +7,18 @@
 
       </div>
     <div class="col-sm-11 resCont">
-      Level 2
+      Level 2 
         <div class="col-sm-4">
-        <div ng-repeat ="obj in RE.reservations | orderBy: '-time':true" ng-show=Date.now()>
+        <div ng-repeat="obj in RE.reservations">
+          {{test}}
           <div class="resCard">
-            <div>{{obj.name}}</div>
+            <div>Fiest Name: {{obj.name.first}}</div>
+            <div>Last Name: {{obj.name.last}}</div>
             <div>{{obj.time}}</div>
-            <div>{{obj.email}}</div>
-            <div>{{obj.phoneNumber}}</div>
+            <div>Email: {{obj.email}}</div>
+            <div>Phone Number: {{obj.phoneNumber}}</div>
+            <div>Reservation Time: {{obj.resDayAndTime}}</div>
+            <div>Number of guests: {{obj.guestNumber}}</div>
     <button ng-click="RE.updateReservation()">Click me</button>
           </div>
         </div>

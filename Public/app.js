@@ -24,8 +24,13 @@ app.config(function($stateProvider, $urlRouterProvider){
 			controller: 'ReservationsCtrl',
 			controllerAs: 'RE',
 			resolve: {
-				restaurant: function(ReservationsService){
-					ReservationsService.getReservations();
+				restaurant: function(ReservationsService, $q){
+					var dfd = $q.defer();
+					ReservationsService.getReservations()
+					.then(function(res){
+                 dfd.resolve(res);
+                 });
+				 return dfd.promise;
 				}
 			}
 		})

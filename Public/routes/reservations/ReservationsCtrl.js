@@ -1,10 +1,11 @@
 (function () {
 	angular.module('MRE')
-		.controller('ReservationsCtrl', ['$scope', "ReservationsService",'$modal', '$log',function($scope, ReservationsService, $modal, $log, restaurant){
+		.controller('ReservationsCtrl', ['$scope', 'ReservationsService','$modal', '$log','restaurant',function($scope, ReservationsService, $modal, $log, restaurant){
 			var RE = this;
 		
                  RE.reservations = restaurant;
-                 RE.reservations = [];
+                
+                 console.log("Re.Reservations:", RE.reservations);
                  
                  RE.updateReservation = ReservationsService.updateReservation;
 		
