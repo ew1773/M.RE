@@ -101,7 +101,16 @@ passport.serializeUser(function(user, done) {
 });
 passport.deserializeUser(function(id, done) {
   RestaurantUser.findById(id, function (err, user) {
-    done(err, user);
+  	if(err) done(err);
+  	if(user){
+  		done(null, user);
+  	}
+  	else if(!user) {
+  		ClientUser.findById(id, function(err, user) {
+  			if(err) done(err);
+  			done(null, user);
+  		})
+  	}
   });
 });
 
@@ -109,6 +118,7 @@ passport.deserializeUser(function(id, done) {
 
 function requireAuth (req, res, next) {
 	if (!req.isAuthenticated()) {
+		console.log('requireAuth for res.body: ', req.body);
 		return res.status(401).end();
 	}
 	next();
@@ -127,13 +137,12 @@ var logMe = function(req, res, done) {
 app.post('/api/client', ClientController.create);
 app.post('/api/restaurant', RestaurantController.create);
 // login endpoint
-app.post('/api/client/auth', logMe, passport.authenticate('local', { failureRedirect: '/' }), function(req, res) {
+app.post('/api/client/auth', passport.authenticate('local', { failureRedirect: '/' }), function(req, res) {
 	console.log("res from server.js: ", res)
 	res.status(200).end();
 });
-app.post('/api/restaurant/auth', logMe, passport.authenticate('local', { failureRedirect: '/' }), function(req, res) {
+app.post('/api/restaurant/auth', passport.authenticate('local', { failureRedirect: '/' }), function(req, res) {
 	res.status(200).end();
-
 });
 // log out endpoints
 app.get('/api/auth/logout', function(req, res) {
@@ -145,11 +154,12 @@ app.get('/api/restaurant', requireAuth, RestaurantController.read);
 app.put('/api/restaurant/update', requireAuth, RestaurantController.update);
 app.delete('/api/restaurant/delete', requireAuth, RestaurantController.delete);
 // client endpoint
-app.get('/api/client', requireAuth, ClientController.read);
+app.get('/api/client', ClientController.read);
 app.put('/api/client/:id', requireAuth, ClientController.update);
 app.delete('/api/client/:id', requireAuth, ClientController.delete);
 // menu endpoint
-app.post('/api/menu', requireAuth, MenuController.create);
+app.post('/api/menu/drink', requireAuth, MenuController.addDrink);
+app.post('/api/menu/appetizer', requireAuth, MenuController.addAppetizer);
 app.get('/api/menu', requireAuth, MenuController.read);
 app.put('/api/menu/update', requireAuth, MenuController.update);
 app.delete('/api/menu/:id', requireAuth, MenuController.delete);

@@ -6,7 +6,7 @@ var q = require('q');
  
 var userRestaurantSchema = new mongoose.Schema({
 	
-	// businessName: { type: String, required: true },
+	businessName: { type: String},
 
 	businessEmail: { type: String, unique: true, required: true	},
 

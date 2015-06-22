@@ -1,0 +1,36 @@
+<form class="form-horizontal" method="post">
+    <div class='modal-header'>
+        <h1 class="profileicon text-center">Add Appetizer</h1>
+    </div>
+    <div class="modal-body">        
+        <div class="form-group">
+            <span class="col-md-1 col-md-offset-1 text-center"></span>
+            <div class="col-md-8">
+                <input id="email" name="email" type="text" placeholder="Item name" ng-model="AIC.name" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <span class="col-md-1 col-md-offset-1 text-center"></span>
+            <div class="col-md-8">
+                <input id="phone" name="phone" type="text" placeholder="Cost" ng-model="AIC.cost" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <span class="col-md-1 col-md-offset-1 text-center"></span>
+            <div class="col-md-8">
+                <input id="hours" name="hours" type="text" placeholder="Description" ng-model="AIC.description"class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <span class="col-md-1 col-md-offset-1 text-center"><i class="fa fa-upload fa-2x profileicon"></i></span>
+            <div class="col-md-8">
+                <button class="btn btn-info">Picture upload</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="AIC.addNewAppetizer(AIC.name, AIC.cost, AIC.description)">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>

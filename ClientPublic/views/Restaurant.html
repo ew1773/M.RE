@@ -43,7 +43,7 @@
 				        <div class="col-md-6">
 				            <p class="input-group">
 				            	<!-- This input will return an ng-model with a date object -->
-				              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="resDayAndTime" ng-change="dataTesting.dateChange(); dataTesting.resChange()" is-open="opened" min-date="minDate" max-date="" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+				              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="resDayAndTime" ng-change="dataTesting.dateChange(); dataTesting.resChange()" is-open="opened" min-date="minDate" max-date="" datepicker-options="dateOptions" ng-required="true" close-text="Close" required />
 				              <span class="input-group-btn">
 				                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
 				              </span>
@@ -52,7 +52,7 @@
 				    </div>
 				    <br />
 				    <div class="timepicker">
-						<timepicker ng-model="resDayAndTime" ng-change="dataTesting.timeChange(); dataTesting.resChange()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+						<timepicker ng-model="resDayAndTime" ng-change="dataTesting.timeChange(); dataTesting.resChange()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" required></timepicker>
 
 						<br />
 
@@ -64,7 +64,7 @@
 			<fieldset class="res-guest-details"> <!-- number of guests -->
 				<div class="res-input">
 					<label>Number of Guests</label>
-					<input id="" type="number" placeholder="Input Party Size..." min="1" ng-model="partySize" ng-change="dataTesting.resChange()" />
+					<input id="" type="number" placeholder="Input Party Size..." min="1" ng-model="partySize" ng-change="dataTesting.resChange()" required />
 				</div>
 			</fieldset>
 			<hr />
@@ -111,15 +111,11 @@
 			<fieldset class="res-contact-info"> <!-- confirm/enter contact info -->
 				<div class="res-input">
 					<label>Contact Phone #</label>
-					<input type="number" ng-model="thisUser.phoneNumber"/>
+					<input type="number" ng-model="thisUser.phoneNumber" required />
 				</div>
 			</fieldset>
 			<br />
-
+			<button type="submit" class="btn btn-success" ng-click="submitRes()">Go!</button>
 		</form>
-	</div>
-	
-	<div> <!-- submit, save, cancel button panel -->
-		<button class="btn btn-success" ng-click="submitRes()">Go!</button>
 	</div>
 </div>

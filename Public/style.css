@@ -18,13 +18,10 @@ body {
   background-size: cover;
 }
 
-
-
 .body {
 	height: 100%;
 	width: 100%;
 }
-
 
 .main {
 	background-image: url(https://snap-photos.s3.amazonaws.com/img-thumbs/960w/0HCMIT272C.jpg);
@@ -65,7 +62,7 @@ body {
 	width: auto;
 
 }
- .colhead{
+.colhead{
 	text-align: center;
 	/*background-color: #4a90e2;*/
 	font-size: 36px;
@@ -101,19 +98,19 @@ margin-right: auto;
 	margin-top: 20px;
 }
 
-/* CSS for profile.html */
+/************************************ CSS for profile.html************************************/
 
 
-.profile {
+/*.profile {
 	font-size: 65px;
 	margin-top: -20px;
-}
+}*/
 
-.profilelist {
+/*.profilelist {
 	list-style-type: none;
 	font-size: 15px; 
 	font-size: 2vw;
-}
+}*/
 
 /*.editProfile {
 	width: 500px;
@@ -123,33 +120,42 @@ margin-right: auto;
     left: 50%;
     margin-top: -25px;
 }*/
-.restProfileForm {
+/*.restProfileForm {
+	width: 50%;
+	margin: 0 auto;
+}*/
+
+/*#restEditButton {
+	text-align: center;
+}*/
+
+/*.blueicon {
+	font-color: blue;
+}*/
+
+.profileheader {
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.profileicon {
+    color: #36A0FF;
+}
+
+
+
+.profileView {
+	height: 100%;
 	width: 50%;
 	margin: 0 auto;
 }
 
-#restEditButton {
-	text-align: center;
+.textedOutput {
+	font-size: 25px;
+	margin: 0;
 }
 
-.blueicon {
-	font-color: blue;
-}
 
-.profileheader {
-        color: #36A0FF;
-        font-size: 27px;
-        padding: 10px;
-}
-
-.profileicon {
-        font-size: 35px;
-        color: #36A0FF;
-}
-
-.inlineDisplay {
-	display: inline-block;
-}
 
 /* Menu page */
 

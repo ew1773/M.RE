@@ -1,4 +1,4 @@
-<form class="form-horizontal" method="post">
+<form class="form-horizontal" method="post" ng-upload="complete(content)">
     <div class='modal-header'>
         <h1 class="profileicon text-center">Edit Profile</h1>
     </div>
@@ -7,6 +7,12 @@
             <span class="col-md-1 col-md-offset-1 text-center"><i class="fa fa-university profileicon" style="font-size: 27px;"></i></span>
             <div class="col-md-8">
                 <input id="restaurantName" ng-model="RPC.name" name="name" type="text" placeholder="Restaurant Name" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <span class="col-md-1 col-md-offset-1 text-center"><i class="fa fa-file-image-o profileicon" style="font-size: 27px;"></i></span>
+            <div class="col-md-8">
+                <input id="restaurantImg" ng-model="RPC.image" name="file" type="file" class="form-control">
             </div>
         </div>
         <div class="form-group">
@@ -54,7 +60,7 @@
         </div>
         <div class="form-group">
             <div class="col-md-12 text-center">
-                <button type="submit" class="btn btn-primary btn-lg" ng-click="RPC.updateProfile(RPC.name, RPC.addressOne, RPC.addressTwo, RPC.city, RPC.state, RPC.zip, RPC.email, RPC.phone, RPC.tableNumber, RPC.capacity)">Submit</button>
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="RPC.updateProfile(RPC.name, RPC.image, RPC.addressOne, RPC.addressTwo, RPC.city, RPC.state, RPC.zip, RPC.email, RPC.phone, RPC.tableNumber, RPC.capacity)" upload-submit>Submit</button>
             </div>
         </div>
     </div>

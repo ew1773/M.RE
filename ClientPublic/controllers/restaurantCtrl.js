@@ -1,6 +1,6 @@
 var app = angular.module('MRE');
 
-app.controller('RestaurantCtrl', function($scope, getRestById, RestaurantService, ReservationService, $log) {
+app.controller('RestaurantCtrl', function($scope, getRestById, getClient, UserService, RestaurantService, ReservationService, $log) {
 	
 	// resolve variable for this restaurant
 	$scope.thisRest = getRestById;
@@ -122,7 +122,6 @@ app.controller('RestaurantCtrl', function($scope, getRestById, RestaurantService
 	$scope.submitRes = function() {
 		if(!userLoggedIn) {
 			alert("Please log in to continue!");
-			
 			
 		} else if(userLoggedIn) {
 			ReservationService.submitRes({

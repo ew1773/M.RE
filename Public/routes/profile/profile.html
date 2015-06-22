@@ -1,36 +1,52 @@
 <!--restaurantsProfile !-->
-<div class="container-fluid">
-    <div class="container">
-        <legend class="text-center profile">Profile</legend>
-    </div>
-    <div>
-        <form class='restProfileForm'>
-            <ul class="profilelist list-group">
-                <li>
-                    <i class="fa fa-university profileicon fa-x2"></i>&nbsp&nbsp Restaurant Name : {{PR.profile.businessName}}
-                </li>
-                </br>
-                <li>
-                    <i class="fa fa-map-marker profileicon"></i>&nbsp&nbsp&nbsp Address : {{PR.profile.businessAddress.addressOne}}&nbsp {{PR.profile.businessAddress.addressTwo}}, {{PR.profile.businessAddress.city}}, {{PR.profile.businessAddress.state}}, {{PR.profile.businessAddress.zip}}
-                </li>
-                </br>
-                <li>
-                    <i class="fa fa-phone profileicon"></i>&nbsp&nbsp Contact Number : {{PR.profile.businessNumber}}
-                </li>
-                </br>
-                <li><i class="fa fa-envelope-o profileicon"></i>&nbsp&nbsp Email : {{PR.profile.businessEmail}}
-                </li>
-                </br>
-                <li><i class="fa fa-clock-o profileicon"></i>&nbsp&nbsp business Hours : {{PR.profile.businessHours}}
-                </li>
-                </br>
-                <li><i class="fa fa-users profileicon"></i>&nbsp&nbsp Max capacity : {{PR.profile.capacity}}
-                </li>
-            </ul>
-            <div id='restEditButton'>
-                <button class="btn btn-link" ng-click="PR.profileUpdateModal('lg')">edit</button>
-            </div>
-        </form>
-    </div>
+<div class="container-fluid profileView" style="background:white">
+    <div class='row'>
+
+        <div class="text-center">
+            <i class="fa fa-university fa-2x profileicon"></i>
+            <span class='profileheader'>{{PR.data[0].businessName}}'s Profile</span>
+        </div>
+        <hr />
+            <!--  <li>
+            <i class="fa fa-university profileicon fa-x2"></i>&nbsp&nbsp Restaurant Name : {{PR.data[0].businessName}}
+            </li> -->
+        <div class='col-xs-1 col-md-1'>
+            <i class="fa fa-map-marker fa-2x profileicon"></i>
+        </div>
+        <div class='col-xs-11 col-md-11 textedOutput'>
+            Address : <br />
+            {{PR.data[0].businessAddress.addressOne}} <br />
+            <div ng-hide='businessSecAdd'>{{PR.data[0].businessAddress.addressTwo}}</div> <br />
+            {{PR.data[0].businessAddress.city}}, {{PR.data[0].businessAddress.state}}, {{PR.data[0].businessAddress.zip}}
+        </div>
+        <div class='col-xs-1 col-md-1'>
+            <i class="fa fa-phone fa-2x profileicon"></i>
+        </div>
+        <div class='col-xs-11 col-md-11 textedOutput'>
+            Contact Number : {{PR.data[0].businessNumber}}
+        </div>
+        <div class='col-xs-1 col-md-1'>
+            <i class="fa fa-envelope-o fa-2x profileicon"></i>
+        </div>
+        <div class='col-xs-11 col-md-11 textedOutput'>
+            Email : {{PR.data[0].businessEmail}}
+        </div>
+        <div class='col-xs-1 col-md-1'>
+            <i class="fa fa-clock-o fa-2x profileicon"></i>
+        </div>
+        <div class='col-xs-11 col-md-11 textedOutput'>
+            Business Hours : {{PR.profile.businessHours}}
+        </div>
+        <div class='col-xs-1 col-md-1'>
+            <i class="fa fa-users fa-2x profileicon"></i>
+        </div>
+        <div class='col-xs-11 col-md-11 textedOutput'>
+            Max capacity : {{PR.profile.capacity}}
+        </div>
+        <div  class='col-xs-12 col-md-12' id='restEditButton'>
+            <button class="btn btn-primary btn-xs" ng-click="PR.profileUpdateModal('lg')">edit</button>
+        </div>
+
+    </div> <!-- close /.row -->
     <!-- edit option for profile !-->
 </div>

@@ -9,7 +9,7 @@
                     url: '/api/restaurant/update',
                     data : update 
                 }).then(function(response){
-                    deferred.resolve(response.data)
+                    deferred.resolve(response.data);
                 })
                 return deferred.promise;
             }

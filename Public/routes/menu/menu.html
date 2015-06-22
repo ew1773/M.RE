@@ -5,6 +5,7 @@
                 <div class="panel-heading">
                     <h2 class="panel-title">
 						<a href="#collapseone" data-toggle="collapse" data-parent="accordion">Appetizer</a>
+                        <button type="submit" class="btn pull-right btn-primary btn-xs" ng-click="MENU.addNewAppetizer('lg')">Add</button>
 					</h2>
                 </div>
                 <div id="collapseone" class="panel-collapse collapse in">
@@ -16,6 +17,7 @@
                 <div class="panel-heading">
                     <h2 class="panel-title">
 						<a href="#collapseone" data-toggle="collapse" data-parent="accordion">Drinks</a>
+                        <button type="submit" class="btn pull-right btn-primary btn-xs" ng-click="MENU.addNewDrink('lg')">Add</button>
 					</h2>
                 </div>
                 <div id="collapseone" class="panel-collapse collapse in">
@@ -25,6 +27,4 @@
             </div>
         </div>
     </div>
-    <button type="submit" class="btn center-block btn-primary btn-sm" ng-click="MENU.addItemModal('lg')">Add Item</button>
 </div>
-<!--- talk over on the menu object and see how it can be arranged to seperate drink from appetizer!-->

@@ -1,15 +1,8 @@
 <form class="form-horizontal" method="post">
     <div class='modal-header'>
-        <h1 class="profileicon text-center">Add Item</h1>
+        <h1 class="profileicon text-center">Add Drink</h1>
     </div>
-    <div class="modal-body">
-        <div class="form-group">
-            <span class="col-md-1 col-md-offset-1 text-center"><i class="fa fa-cutlery profileicon fa-2x"></i></span>
-            <div class="col-md-8">
-                <input id="restaurantName" ng-model="AIC.category" name="name" type="text" placeholder="Category ex.appetizer or drink" class="form-control">
-            </div>
-        </div>
-        
+    <div class="modal-body">        
         <div class="form-group">
             <span class="col-md-1 col-md-offset-1 text-center"></span>
             <div class="col-md-8">
@@ -36,7 +29,7 @@
         </div>
         <div class="form-group">
             <div class="col-md-12 text-center">
-                <button type="submit" class="btn btn-primary btn-lg" ng-click="AIC.addMenuItem(AIC.category, AIC.name, AIC.cost, AIC.description)">Submit</button>
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="AIC.addNewDrink(AIC.name, AIC.cost, AIC.description)">Submit</button>
             </div>
         </div>
     </div>

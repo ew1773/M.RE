@@ -9,7 +9,21 @@ app.service('clientService', function($http, $q, $window) {
 			url: '/api/client',
 			data: user
 		}).then(function(response) {
-			$window.location.href = '/public';
+			$http({
+				method: 'POST',
+				url: '/api/client/auth',
+				data: {
+					email: user.username,
+					password: user.password
+				}
+			}).then(function(res) {
+				console.log(res)
+				if(res.status === 200) {
+					$window.location.href = '/public'
+				} else {
+					console.log('Not logged in')
+				}
+			});
 		});
 	};
 
